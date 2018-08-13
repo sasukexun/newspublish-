@@ -375,11 +375,10 @@ $jiange:10px;
   text-align: center;
 }
 @mixin footer{
-  border-top: 1px solid #000;
   bottom: 0;
-  position: fixed;
+  position: absolute;
   width: 100%;
-  background: #ccc;
+  background: #eee;
 }
 @mixin tc{
   text-align: center;
@@ -428,6 +427,7 @@ body{
     border: 1px solid #ccc;
     background:#fff;
     height: 100%;
+    position: relative;
     .title{
       @include title;
     }
@@ -464,7 +464,7 @@ body{
     @include footer;
     li{
       float: left;
-      width: 49%;
+      width: 50%;
       @include tc;
       a{
         color: #000;
@@ -474,23 +474,22 @@ body{
         padding: $jiange  0;
       }
     }
-    li:first-child{
-      border-right: 1px solid #000;
-    }
   }
   .isIndex{
     li:first-child{
-      background: #eee;
+      background: #ccc;
       a{
         color: green;
       }
     }
   }
   .isManage{
+
     li:last-child{
-      background: #eee;
+      background: #ccc;
       a{
         color: green;
+
       }
     }
   }
