@@ -13,12 +13,20 @@
       <tr v-for="(item,index) in peoples">
         <td>{{item.name}}</td>
         <td v-bind:id="index">
-          <span>编辑</span>
+          <span v-on:click="edit">编辑</span>
           <span v-on:click="del">删除</span>
         </td>
       </tr>
     </table>
-    <FooterNav v-bind:class="{'isManage':isNowPage}"></FooterNav>
+    <div class="warp " v-show="showEdit">
+      <div class="bg"></div>
+      <div class="content">
+        <input type="text" placeholder="请输入新姓名" v-model="newName">
+        <button v-on:click="cancel">取消</button>
+        <button v-on:click="editName">确定</button>
+      </div>
+    </div>
+    <footer-nav v-bind:class="{'isManage':isNowPage}"></footer-nav>
   </div>
 </template>
 <script>
@@ -32,6 +40,9 @@
       return{
         isNowPage: true,
         showAdd:false,
+        showEdit:false,
+        newName:"",
+        editId:0,
         peoples: [{'name':'Jack'},{'name':'Joe'}],
         nameValue:''
       }
@@ -55,7 +66,28 @@
       del(e){
         //offsetParent就是距离该子元素最近的进行过定位的父元素
         var id=e.target.offsetParent.id;
+        //splice(index,howmany,item1,.....,itemX)
+        //index	必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。
+        //howmany	必需。要删除的项目数量。如果设置为 0，则不会删除项目。
         this.peoples.splice(id,1)
+      },
+      edit(e){
+        var id=e.target.offsetParent.id;
+        this.showEdit=true;
+        this.editId=id;
+        this.newName=this.peoples[id].name
+      },
+      cancel(){
+        this.showEdit= false
+      },
+      editName(e){
+        var v=this.newName;
+        if(v.trim()==""){
+          console.log("请输入姓名")
+        }else{
+          this.peoples[this.editId].name=this.newName;
+          this.showEdit= false
+        }
       }
     }
   }
