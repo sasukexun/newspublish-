@@ -492,7 +492,7 @@ body{
     @include footer;
     li{
       float: left;
-      width: 50%;
+      width: 33.33%;
       @include tc;
       a{
         color: #000;
@@ -512,8 +512,16 @@ body{
     }
   }
   .isManage{
+    li:nth-child(2){
+      background: #ccc;
+      a{
+        color: green;
 
-    li:last-child{
+      }
+    }
+  }
+  .isWeather{
+    li:nth-child(3){
       background: #ccc;
       a{
         color: green;
