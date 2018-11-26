@@ -11,7 +11,9 @@
       FooterNav
     },
     data(){
-      return{isNowPage: true}
+      return{
+        isNowPage: true
+      }
     }
   }
 </script>

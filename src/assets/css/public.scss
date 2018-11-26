@@ -348,7 +348,6 @@ ul li{
 html,body{
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 a{
 text-decoration: none;
@@ -369,6 +368,7 @@ input[type="text"]{
 //public
 $width:640px;
 $jiange:10px;
+
 @mixin title {
   font-size: 16px;
   margin: $jiange 0;
@@ -376,12 +376,23 @@ $jiange:10px;
 }
 @mixin footer{
   bottom: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
   background: #eee;
+  left: 0;
 }
 @mixin tc{
   text-align: center;
+}
+@mixin fl{
+  float: left;
+}
+@mixin fr{
+  float: right;
+}
+@mixin clear{
+  clear: both;
+  overflow: hidden;
 }
 @mixin imgblock{
   display: block;
@@ -416,7 +427,7 @@ $jiange:10px;
 }
 body{
   position: relative;
-  background: #ccc;
+  background:#fff;
   .banner{
     @include imgblock;
     width: 100px;
@@ -424,8 +435,6 @@ body{
   #news{
     max-width: $width;
     margin: 0 auto;
-    border: 1px solid #ccc;
-    background:#fff;
     height: 100%;
     position: relative;
     .title{
@@ -529,5 +538,35 @@ body{
       }
     }
   }
+  .Weather{
+    @include tc;
+    margin-bottom: 50px;
+    .input-area{
+      margin-top:$jiange ;
+    }
+    .sub-button{
+      @include btn;
+    }
+    .Weather_box{
+      padding: 10px;
+      .cityWeather{
+        background: #9dbefb;
+        color: #fff;
+        padding: 10px;
+        line-height: 24px;
+        @include clear;
+        .date{
+          @include fl;
+          line-height: 60px;
+          font-weight: bold;
+        }
+        .cold{
+          @include fr;
+        }
+      }
+
+    }
+  }
+
 }
 
