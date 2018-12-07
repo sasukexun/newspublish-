@@ -19,6 +19,6 @@
 </script>
 <style>
   .title{
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 </style>

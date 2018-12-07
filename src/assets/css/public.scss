@@ -370,7 +370,7 @@ $width:640px;
 $jiange:10px;
 
 @mixin title {
-  font-size: 16px;
+  font-size: 0.8rem;
   margin: $jiange 0;
   text-align: center;
 }
@@ -428,6 +428,7 @@ $jiange:10px;
 body{
   position: relative;
   background:#fff;
+  font-size: 0.8rem;
   .banner{
     @include imgblock;
     width: 100px;
