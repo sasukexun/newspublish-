@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <ul>
+    <ul >
       <li><router-link to='/'>首页</router-link></li>
       <li><router-link to='/manage'>人员管理</router-link></li>
       <li><router-link to='/weather'>天气查询</router-link></li>

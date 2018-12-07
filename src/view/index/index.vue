@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <p class="title">欢迎来到用户操作系统</p>
+    <p class="title" >欢迎来到用户操作系统</p>
     <FooterNav v-bind:class="{'isIndex':isNowPage}"></FooterNav>
   </div>
 </template>
@@ -17,3 +17,8 @@
     }
   }
 </script>
+<style>
+  .title{
+    font-size: 1rem;
+  }
+</style>
