@@ -3,8 +3,9 @@ import App from './App';
 import router from './router';
 import resource from './resource';//通过import引入
 
+//全局配置处
 Vue.config.productionTip = false;
-
+Vue.config.silent = true;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

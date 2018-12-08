@@ -39,3 +39,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 [免费api](https://www.jianshu.com/p/e6f072839282)
 
 
+
+###
+
+props  用于子组件填写数据
+
+父组件主要应用于填写数据和模块组成，子单元通过 prop 接口与父单元进行了良好的解耦
+
