@@ -5,9 +5,6 @@
 <script>
   export default{
     props:['todo'],
-    data(){
-
-    },
     methods:{
       fun:function(){
 

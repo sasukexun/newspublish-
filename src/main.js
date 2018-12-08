@@ -12,9 +12,12 @@ if ('addEventListener' in document) {
   }, false);
 }
 
+if (module.hot) {
+  module.hot.accept();
+}
+
 //全局配置处
 Vue.config.productionTip = false;
-Vue.config.silent = true;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
