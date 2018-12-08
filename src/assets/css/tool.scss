@@ -1,0 +1,59 @@
+$width:640px;
+$jiange:10px;
+
+@mixin title {
+  font-size: 0.8rem;
+  margin: $jiange 0;
+  text-align: center;
+}
+@mixin footer{
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  background: #eee;
+  left: 0;
+}
+@mixin tc{
+  text-align: center;
+}
+@mixin fl{
+  float: left;
+}
+@mixin fr{
+  float: right;
+}
+@mixin clear{
+  clear: both;
+  overflow: hidden;
+}
+@mixin imgblock{
+  display: block;
+  margin: 0 auto;
+}
+@mixin btn{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-color: transparent;
+  border-radius: 4px;
+}
+@mixin btn-green{
+  background: green;
+  color: #fff;
+  width: 80%;
+}

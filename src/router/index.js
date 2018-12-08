@@ -4,7 +4,7 @@ import Index from '../view/index/index'
 import Manage from '../view/manage/index'
 import Weather from '../view/weather/index'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
