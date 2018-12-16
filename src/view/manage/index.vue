@@ -74,7 +74,7 @@
       edit(e){
         var id=e.target.offsetParent.id;
         this.showEdit=true;
-        this.editId=id;
+        this.editId=id;//标识符
         this.newName=this.peoples[id].name
       },
       cancel(){
