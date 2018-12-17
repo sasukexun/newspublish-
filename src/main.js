@@ -18,6 +18,8 @@ if (module.hot) {
 
 //全局配置处
 Vue.config.productionTip = false;
+//13代表的是按键数字（enter）
+Vue.config.keyCodes.nishigesha = 13
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -3,6 +3,7 @@
     <div class="input-area">
       <input type="text" placeholder="请输城市名称" v-model="cityValue">
       <button class="sub-button" v-on:click="cityWeather">搜索</button>
+      <p class="tip">{{answer}}</p>
       <div v-for="(item,index) in temperature" class="Weather_box">
         <div class="cityWeather">
           <div class="date">{{item.date}}</div>
@@ -19,6 +20,7 @@
 </template>
 <script>
   import FooterNav from '../../components/footer'
+  var lodash = require('lodash');
   export default{
     components: {
       FooterNav
@@ -28,11 +30,21 @@
         isNowPage: true,
         cityValue:"",
         weather:"",
-        temperature:[]
+        temperature:[],
+        answer: '请输入您想知道的城市天气'
       }
     },
+    watch: {
+      cityValue: function () {
+        this.answer = '搜索中';
+        this.debouncedcityWeather()
+      }
+    },
+    created: function () {
+      this.debouncedcityWeather = _.debounce(this.cityWeather, 500)
+    },
     mounted() {
-      this.getCity();
+      // this.getCity();
     },
     methods:{
       getCity:function () {
@@ -46,14 +58,19 @@
         });
       },
       cityWeather:function () {
-        this.$http.get('' +
-          'https://www.apiopen.top/weatherApi?city='+this.cityValue).
-        then(response => {
-          // console.log(response.data);
-          this.temperature=response.data.data.forecast;
-        }, response => {
-          console.log("error");
-        });
+        if(this.cityValue==""){
+          this.answer="";
+          this.temperature=[];
+        }else{
+          this.$http.get('https://www.apiopen.top/weatherApi?city='+this.cityValue).
+          then(response => {
+            this.temperature=response.data.data.forecast;
+            this.answer=this.cityValue+":近七天的温度";
+          }, response => {
+            this.answer="很抱歉没有找到该城市";
+            console.log("error");
+          });
+        }
       }
     }
   }

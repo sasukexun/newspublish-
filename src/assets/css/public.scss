@@ -115,16 +115,26 @@ body{
     }
   }
   .Weather{
-    @include tc;
+    width: 80%;
+    margin: 0 auto;
     margin-bottom: 50px;
     .input-area{
       margin-top:$jiange ;
+      input{
+        width: 170px;
+      }
+    }
+    .tip{
+      text-align: left;
+      font-size: 14px;
+      color: #999;
+      margin-left: 5px;
     }
     .sub-button{
       @include btn;
     }
     .Weather_box{
-      padding: 10px;
+      padding: 10px 0;
       .cityWeather{
         background: #9dbefb;
         color: #fff;
@@ -140,7 +150,6 @@ body{
           @include fr;
         }
       }
-
     }
   }
 }
