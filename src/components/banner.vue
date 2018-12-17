@@ -49,7 +49,7 @@
       //两次滑动间隔的时间
       interval: {
         type: Number,
-        default: 2500
+        default: 1500
       },
       //底部小圆按钮
       pageIcon: {
@@ -130,7 +130,7 @@
             that.indexBox=that.indexBox-1;
             that.positionLeft=(parseInt(that.positionLeft)+parseInt(that.listWidth))+"px";
           }
-        setTimeout(that.sliders(), 12000)
+        setTimeout(that.autoPlay&&that.sliders(), 12000)
       },
       fn(e) {
         e.preventDefault()
