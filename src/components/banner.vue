@@ -5,20 +5,20 @@
           :style="{width:allWidth,left:positionLeft}"
           ref="sliderBox"
           @touchmove="fn"
-      >
-        <li class="slider-item"
-            :class="indexBox==index? activeClass : ''"
-            v-for="(item,index) in banner"
-            :index="index"
-            :style="{width:listWidth}"
-            @touchstart="bannerStart"
-            @touchmove="bannerMove"
-            @touchend="bannerEnd"
+       >
+      <li class="slider-item"
+          :class="indexBox==index? activeClass : ''"
+          v-for="(item,index) in banner"
+          :index="index"
+          :style="{width:listWidth}"
+          @touchstart="bannerStart"
+          @touchmove="bannerMove"
+          @touchend="bannerEnd"
         >
-          <a :href="item.href">
-            <img :src="item.img" alt="">
-          </a>
-        </li>
+        <a :href="item.href">
+          <img :src="item.img" alt="">
+        </a>
+      </li>
       </ul>
       <div class="carousel-indicators" v-if="pageIcon">
         <span v-for="(item,index) in carousel"
@@ -61,7 +61,7 @@
         type:Boolean,
         default: false
       },
-      banner:{},
+      banner:{}
     },
     data(){
       return{
@@ -95,7 +95,7 @@
       that.allWidth=(widths*that.bannerLength)+"px";
       that.listWidth=widths+"px";
       that.positionLeft=-(that.indexBox*parseInt(that.listWidth))+"px";
-      // 初始化滚动
+     // 初始化滚动
       that.autoPlay&&that.sliders();
     },
     methods: {
@@ -114,22 +114,22 @@
         },that.interval);
       },
       bannerStart(e){
-        this.clears();
-        this.touch.start = e.touches[e.touches.length - 1].clientX;
+          this.clears();
+          this.touch.start = e.touches[e.touches.length - 1].clientX;
       },
       bannerMove(e){
         this.touch.move= e.touches[e.touches.length - 1].clientX;
       },
       bannerEnd(){
-        var that =this;
-        if(this.touch.start-this.touch.move>0 &&(that.indexBox+1)<that.bannerLength) {
-          that.indexBox=that.indexBox+1;
-          that.positionLeft=(parseInt(that.positionLeft)-parseInt(that.listWidth))+"px";
-        }
-        if(this.touch.start-this.touch.move<0 && that.indexBox>0){
-          that.indexBox=that.indexBox-1;
-          that.positionLeft=(parseInt(that.positionLeft)+parseInt(that.listWidth))+"px";
-        }
+          var that =this;
+          if(this.touch.start-this.touch.move>0 &&(that.indexBox+1)<that.bannerLength) {
+            that.indexBox=that.indexBox+1;
+            that.positionLeft=(parseInt(that.positionLeft)-parseInt(that.listWidth))+"px";
+          }
+          if(this.touch.start-this.touch.move<0 && that.indexBox>0){
+            that.indexBox=that.indexBox-1;
+            that.positionLeft=(parseInt(that.positionLeft)+parseInt(that.listWidth))+"px";
+          }
         setTimeout(that.sliders(), 12000)
       },
       fn(e) {
@@ -137,11 +137,11 @@
       },
       clears() {
         clearInterval(this.timer1);
-      },
+      }
     }
   }
 </script>
-<style lang="scss">
+<style lang="scss" scoped="" type="text/css">
   .banner{
     width: 100%;
     height: 6rem;
