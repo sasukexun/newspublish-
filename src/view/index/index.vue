@@ -2,33 +2,21 @@
   <div class="content">
     <p class="title">欢迎来到用户操作系统</p>
     <topBanner :banner="banner" :autoPlay="autoPlay" ></topBanner>
-    <div :style="{ fontSize: postFontSize + 'em' }">
-      <news
-        v-for="post in posts"
-        v-bind:key="post.id"
-        v-bind:post="post"
-        v-on:enlarge-text="postFontSize += $event"
-      ></news>
-    </div>
-    <p>下一节：动态组件</p>
     <FooterNav v-bind:class="{'isIndex':isNowPage}"></FooterNav>
   </div>
 </template>
 <script>
   import FooterNav from '../../components/footer';
-  import news from '../../components/news'
-  import buttonCounter  from'../../components/test.vue'
   import topBanner from '../../components/banner.vue'
   export default{
     components: {
       FooterNav,
-      news,
       topBanner
     },
     data(){
       return{
         isNowPage:true,
-        autoPlay:false,
+        autoPlay:true,
         numbers: [ 1, 2, 3, 4, 5 ],
         banner:[
           {href:"kk",img:"http://aa.ulgueom.cn/news/2.jpg"},

@@ -95,7 +95,7 @@
       that.allWidth=(widths*that.bannerLength)+"px";
       that.listWidth=widths+"px";
       that.positionLeft=-(that.indexBox*parseInt(that.listWidth))+"px";
-     // 初始化滚动
+      // 初始化滚动
       that.autoPlay&&that.sliders();
     },
     methods: {
@@ -138,6 +138,9 @@
       clears() {
         clearInterval(this.timer1);
       }
+    },
+    destroyed: function () {
+      this.clears();
     }
   }
 </script>
