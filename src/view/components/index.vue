@@ -1,20 +1,21 @@
 <template>
   <div class="content">
-    <p class="title">欢迎来到用户操作系统</p>
+    <p>banner</p>
     <topBanner :banner="banner" :autoPlay="autoPlay" ></topBanner>
-    <!--组件切换-->
-   <button
-     v-for="item in tabs"
-     :key="item"
-     :class="['tab-button',{active:current===item}]"
-     @click="current=item"
-   >{{item}}</button>
+    <p>nav切换</p>
+    <button
+      v-for="item in tabs"
+      :key="item"
+      :class="['tab-button',{active:current===item}]"
+      @click="current=item"
+    >{{item}}</button>
     <component
       :is="currentPage"
       class="tab"
     >
     </component>
-    <FooterNav v-bind:class="{'isIndex':isNowPage}"></FooterNav>
+
+    <FooterNav v-bind:class="{'isComponents':isComponents}"></FooterNav>
   </div>
 </template>
 <script>
@@ -33,8 +34,8 @@
     },
     data(){
       return{
-        isNowPage:true,
-        autoPlay:true,
+        isComponents:true,
+        autoPlay:false,
         groceryList: [
           { id: 0, text: '蔬菜' },
           { id: 1, text: '奶酪' },

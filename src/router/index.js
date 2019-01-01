@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '../view/index/index'
 import Manage from '../view/manage/index'
 import Weather from '../view/weather/index'
+import Components from '../view/components/index'
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/weather',
       name: 'Weather',
       component: Weather
+    },
+    {
+      path: '/components',
+      name: 'Components',
+      component: Components
     }
   ]
 })

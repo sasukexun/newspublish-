@@ -1,8 +1,10 @@
 <template>
   <div class="content Weather">
     <div class="input-area">
-      <input type="text" placeholder="请输城市名称" v-model="cityValue">
-      <button class="sub-button" v-on:click="cityWeather">搜索</button>
+      <div class="input_box">
+        <input type="text" placeholder="请输城市名称" v-model="cityValue">
+        <button class="sub-button" v-on:click="cityWeather">搜索</button>
+      </div>
       <p class="tip">{{answer}}</p>
       <div v-for="(item,index) in temperature" class="Weather_box">
         <div class="cityWeather">

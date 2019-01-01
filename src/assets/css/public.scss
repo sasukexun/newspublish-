@@ -2,29 +2,28 @@
 @import 'tool';
 body{
   position: relative;
+  position: relative;
   background:#fff;
   font-size: 0.8rem;
   .banner{
     @include imgblock;
     width: 100px;
   }
-  #news{
-    max-width: $width;
-    margin: 0 auto;
-    height: 100%;
-    position: relative;
-    .title{
-      @include title;
-    }
+  .manage{
+    @include tc;
     .add-button{
       @include btn;
       @include btn-green;
     }
-  }
-  .manage{
-    @include tc;
     .input-area{
-      margin-top:$jiange ;
+      margin-top:$jiange;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      input{
+        width: 42%;
+        margin-right: 10px;
+      }
     }
     .sub-button{
       @include btn;
@@ -73,62 +72,28 @@ body{
       }
     }
   }
-  .footer{
-    @include footer;
-    li{
-      float: left;
-      width: 33.33%;
-      @include tc;
-      a{
-        color: #000;
-        width: 100%;
-        display: block;
-        height: 100%;
-        padding: $jiange  0;
-      }
-    }
-  }
-  .isIndex{
-    li:first-child{
-      background: #ccc;
-      a{
-        color: green;
-      }
-    }
-  }
-  .isManage{
-    li:nth-child(2){
-      background: #ccc;
-      a{
-        color: green;
-
-      }
-    }
-  }
-  .isWeather{
-    li:nth-child(3){
-      background: #ccc;
-      a{
-        color: green;
-
-      }
-    }
-  }
   .Weather{
     width: 80%;
     margin: 0 auto;
     margin-bottom: 50px;
     .input-area{
       margin-top:$jiange ;
-      input{
-        width: 170px;
+      .input_box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input{
+          width: 52%;
+        }
       }
+
     }
     .tip{
       text-align: left;
-      font-size: 14px;
+      font-size: .7rem;
       color: #999;
       margin-left: 5px;
+      margin-top: 10px;
     }
     .sub-button{
       @include btn;
@@ -152,5 +117,47 @@ body{
       }
     }
   }
+  .footer{
+    @include footer;
+    li{
+      float: left;
+      width: 33.33%;
+      @include tc;
+      a{
+        color: #000;
+        width: 100%;
+        display: block;
+        height: 100%;
+        padding: $jiange  0;
+      }
+    }
+  }
+  .isManage{
+    li:nth-child(1){
+      background: #ccc;
+      a{
+        color: green;
+
+      }
+    }
+  }
+  .isWeather{
+    li:nth-child(2){
+      background: #ccc;
+      a{
+        color: green;
+
+      }
+    }
+  }
+  .isComponents{
+    li:nth-child(3){
+      background: #ccc;
+      a{
+        color: green;
+      }
+    }
+  }
+
 }
 
