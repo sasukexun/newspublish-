@@ -66,11 +66,12 @@
         }else{
           this.$http.get('https://www.apiopen.top/weatherApi?city='+this.cityValue).
           then(response => {
-            this.temperature=response.data.data.forecast;
-            this.answer=this.cityValue+":近七天的温度";
-          }, response => {
-            this.answer="很抱歉没有找到该城市";
-            console.log("error");
+            if(response.data.data){
+              this.temperature=response.data.data.forecast;
+              this.answer=this.cityValue+":近七天的温度";
+            }else{
+              this.answer="没有该城市数据";
+            }
           });
         }
       }
