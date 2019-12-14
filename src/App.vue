@@ -1,6 +1,6 @@
 <template>
   <div id="news">
-    <img src="./assets/lion.png" class="banner">
+    <img src="./assets/images/lion.png" class="banner">
     <router-view/>
   </div>
 </template>

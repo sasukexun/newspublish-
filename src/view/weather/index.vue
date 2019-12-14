@@ -50,6 +50,7 @@
     },
     methods:{
       getCity:function () {
+        //api已经失效
         this.$http.jsonp('' +
           'http://api.map.baidu.com/location/ip?ak=ia6HfFL660Bvh43exmH9LrI6').
         then(response => {

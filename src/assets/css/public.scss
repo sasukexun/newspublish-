@@ -121,7 +121,7 @@ body{
     @include footer;
     li{
       float: left;
-      width: 33.33%;
+      width: 50%;
       @include tc;
       a{
         color: #000;
@@ -141,17 +141,17 @@ body{
       }
     }
   }
-  .isWeather{
-    li:nth-child(2){
-      background: #ccc;
-      a{
-        color: green;
-
-      }
-    }
-  }
+  //.isWeather{
+  //  li:nth-child(2){
+  //    background: #ccc;
+  //    a{
+  //      color: green;
+  //
+  //    }
+  //  }
+  //}
   .isComponents{
-    li:nth-child(3){
+    li:nth-child(2){
       background: #ccc;
       a{
         color: green;

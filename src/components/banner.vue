@@ -193,22 +193,6 @@
           background-color: #0fdebd;
         }
       }
-      .carousel-btn {
-        position: absolute;
-        top: 50%;
-        width: 50px;
-        height: 45px;
-        margin-top: -25px;
-        cursor: pointer;
-      }
-      .carousel-prev-btn  {
-        left: 0;
-        background: url(../assets/images/arrow-prev.png) no-repeat;
-      }
-      .carousel-next-btn{
-        right: 0;
-        background: url(../assets/images/arrow-next.png) no-repeat;
-      }
     }
   }
 </style>

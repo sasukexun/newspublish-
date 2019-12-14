@@ -46,10 +46,10 @@
         postFontSize: 1,
         hhhhh:'jjjj',
         banner:[
-          {href:"kk",img:"http://aa.ulgueom.cn/news/2.jpg"},
-          {href:"kk",img:"http://aa.ulgueom.cn/news/11.jpg"},
-          {href:"kk",img:"http://aa.ulgueom.cn/news/2.jpg"},
-          {href:"kk",img:"http://aa.ulgueom.cn/news/11.jpg"}
+          {href:"kk",img:"http://union.china.com.cn/gaige/images/attachement/jpg/site355/20080224/00080287cd95092b570502.jpg"},
+          {href:"kk",img:"http://union.china.com.cn/gaige/images/attachement/jpg/site355/20080224/00080287cd95092b570502.jpg"},
+          {href:"kk",img:"http://union.china.com.cn/gaige/images/attachement/jpg/site355/20080224/00080287cd95092b570502.jpg"},
+          {href:"kk",img:"http://union.china.com.cn/gaige/images/attachement/jpg/site355/20080224/00080287cd95092b570502.jpg"}
         ],
         current: 'Home',
         tabs: ['Home','Posts','Archive']
